@@ -7,4 +7,5 @@ add_executable(AndreyCProject main.c
         HobbyLearning/main.c
         University/seminarni/task_1.c
         University/seminarni/task_2.c
-        University/seminarni/task_3.c)
+        University/seminarni/task_3.c
+        University/seminarni/uprazhnenie_2/count_one_to_ten.c)

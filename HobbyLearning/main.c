@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <stdlib.h>
+#include <time.h>
 
 /*int main() {
     printf("My nephew's name is Ivan\n");
@@ -180,13 +182,13 @@
     printf("The biggest number is: %d\n", biggestNum);
 }*/
 
-int main() {
+int main1() {
     float numOne;
     char operator;
     float numberTwo;
     float result;
 
-    printf("Enter the first numebr: ");
+    printf("Enter the first number: ");
     scanf("%f", &numOne);
 
     printf("Enter the operator (+/-/*//: " );
@@ -217,4 +219,276 @@ int main() {
 
     printf("The result is %.2f", result);
     return 0;
+}
+
+/*int main() {
+    int numOne = 1;
+    while (numOne <= 10) {
+        printf("%d\n", numOne);
+        numOne += 1;
+    }
+}*/
+
+/*int main() {
+    int number;
+    int result = 0;
+    while (number != 0) {
+        printf("Enter a number: ");
+        scanf("%d", &number);
+        result += number;
+    }
+    printf("The final result is %d", result);
+}*/
+
+/*int main() {
+    int number;
+    int newNum = 0;
+    printf("Enter a positive integer: ");
+    scanf("%d", &number);
+
+    while (number) {
+        newNum = newNum * 10 + number % 10;
+        number = number / 10;
+    }
+    printf("The reversed number is %d", newNum);
+}*/
+
+/*int main() {
+    for (int i = 2; i <= 20; i+= 2) {
+        printf("%d\n", i);
+    }
+}*/
+
+/*int main() {
+    int number;
+    printf("Enter the number: ");
+    scanf("%d", &number);
+
+    int result = 1;
+    for (int i = number; i >= 1; i--) {
+        result *= i;
+    }
+    printf("The result is %d", result);
+}*/
+
+/*int main() {
+    int number;
+    printf("Enter the number for the multiplication table: ");
+    scanf("%d", &number);
+
+    for (int i = 1; i <= 10; i++) {
+        printf("%d * %d = %d\n", number, i, number * i);
+    }
+}*/
+
+/*int main() {
+    int number;
+    int count = 0;
+    printf("Enter a positive number: ");
+    scanf("%d", &number);
+
+    for (; number != 0;) {
+        number /= 10;
+        count += 1;
+    }
+    printf("%d", count);
+}*/
+
+/*int main() {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= 9; j++) {
+            printf("%d", j);
+        }
+        printf("\n");
+    }
+}*/
+
+/*int main() {
+    int rows;
+    int columns;
+    char symbol;
+
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+
+    printf("Enter the number of columns: ");
+    scanf("%d", &columns);
+
+    printf("Enter the symbol you want: ");
+    scanf(" %c", &symbol);
+
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= columns; j++) {
+            printf("%c", symbol);
+        }
+        printf("\n");
+    }
+}*/
+
+/*int main() {
+    srand(time(NULL));
+    int guess;
+    printf("Enter your guess: ");
+    scanf("%d", &guess);
+    int min = 1;
+    int max = 100;
+    int answer = (rand() % (max - min + 1)) + min;
+    while (guess != answer) {
+        printf("Wrong number! Enter again: ");
+        scanf("%d", &guess);
+    }
+    printf("You guessed the correct number!");
+}*/
+
+/*int main() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= 5; j++) {
+            printf("*");
+        }
+    }
+}*/
+
+
+/*int computerMove(void);
+int playerMove(void);
+void checkWinner(int player, int computer);
+
+int main(void) {
+    srand(time(NULL));
+
+    int computer = computerMove();
+    int player = playerMove();
+
+    switch(computer){
+        case 1:
+            printf("Computer chose ROCK\n");
+            break;
+        case 2:
+            printf("Computer chose PAPPER\n");
+            break;
+        case 3:
+            printf("Computer chose SCISSORS\n");
+            break;
+    }
+
+    switch (player) {
+        case 1:
+            printf("You chose ROCK\n");
+            break;
+        case 2:
+            printf("You chose PAPPER\n");
+            break;
+        case 3:
+            printf("You chose SCISSORS\n");
+            break;
+    }
+
+    checkWinner(player, computer);
+
+    return 0;
+}
+
+int computerMove(void) {
+    return rand() % 3 + 1;
+}
+
+int playerMove(void) {
+    int player;
+
+    printf("Select one of the following options:\n");
+    printf("Rock: choose 1\n");
+    printf("Paper: choose 2\n");
+    printf("Scissors: choose 3\n");
+
+    do {
+        printf("Choose one of the allowed options: ");
+        scanf("%d", &player);
+    } while (player < 1 || player > 3);
+
+    return player;
+}
+
+void checkWinner(int player, int computer) {
+    if (player == computer) {
+        printf("It is a draw!\n");
+    }
+    else if ((player == 1 && computer == 2) ||
+             (player == 2 && computer == 3) ||
+             (player == 3 && computer == 1)) {
+        printf("The computer wins!\n");
+             }
+    else {
+        printf("You win!\n");
+    }
+}*/
+
+//Check Balance
+//Deposit money
+//Withdraw money
+//Exit the banking app
+
+void checkBalance(float balance);
+float depositMoney(float balance);
+float withdrawMoney(float balance);
+
+int main() {
+    float balance = 0.0f;
+    int choice;
+
+    do {
+        printf("Enter 1 to check your balance\n");
+        printf("Enter 2 to deposit money \n");
+        printf("Enter 3 to withdraw money\n");
+        printf("Enter 4 to exit the banking app\n");
+        printf("Enter operation: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                checkBalance(balance);
+                break;
+            case 2:
+                balance = depositMoney(balance);
+                break;
+            case 3:
+                balance = withdrawMoney(balance);
+                break;
+            case 4:
+                printf("Thank you for using the app! See you soon!");
+                break;
+            default:
+                printf("Invalid operation, please try again!");
+        }
+    }while (choice != 4);
+    return 0;
+}
+
+void checkBalance(float balance) {
+    printf("Your current balance is $%.2f\n", balance);
+}
+
+float depositMoney(float balance) {
+    float sum;
+    printf("Enter the deposit: ");
+    scanf("%f", &sum);
+    if (sum <= 0) {
+        printf("You should enter an amount of money\n");
+        return balance;
+    }
+    else {
+        return balance + sum;
+    }
+}
+
+float withdrawMoney(float balance) {
+    float sum;
+    printf("Enter the amount of money for withdrawal: ");
+    scanf("%f", &sum);
+    if (sum > balance) {
+        printf("Insufficient sum\n");
+        return balance;
+    }
+    else {
+        return balance - sum;
+    }
 }
