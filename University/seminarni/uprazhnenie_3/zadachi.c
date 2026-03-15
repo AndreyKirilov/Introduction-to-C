@@ -2,74 +2,71 @@
 #include <math.h>
 
  //ZADACHA 1:
-//float squareArea(float a);
-//float rectangleArea(float a, float b);
-//float triangleArea(float a, float b);
-//float circleArea(float radius);
+/*float squareArea(float a);
+float rectangleArea(float a, float b);
+float triangleArea(float a, float b);
+float circleArea(float radius);
 
-//int main() {
-    //float num;
-    //printf("1 for square\n");
-    //printf("2 for rectangle\n");
-    //printf("3 for triangle\n");
-    //printf("4 for circle\n");
-    //printf("Enter a number: ");
-    //scanf("%f", &num);
-    //printf("%.2f\n", circleArea(5));
-    //printf("%.2f", circleArea(num));
+int main() {
+    float num;
+    printf("1 for square\n");
+    printf("2 for rectangle\n");
+    printf("3 for triangle\n");
+    printf("4 for circle\n");
+    printf("Enter a number: ");
+    scanf("%f", &num);
 
-
-    //if (num == 1) {
-        //float a;
-        //printf("Enter a number for the square's side: ");
-        //scanf("%f", &a);
-        //printf("The type of the figure is square and its area is %.2f", squareArea(a));
-    //}
-
-    //else if(num == 2) {
-        //float a;
-        //float b;
-        //printf("Enter a number for the rectangle's first side: ");
-        //scanf("%f", &a);
-        //printf("Enter a number for the rectangle's second side: ");
-        //scanf("%f", &b);
-        //printf("The type of the figure is rectangle and its area is %.2f", rectangleArea(a, b));
-    //}
-
-    //else if (num == 3) {
-        //float a;
-        //float b;
-        //printf("Enter a number for the triangle's first side: ");
-        //scanf("%f", &a);
-        //printf("Enter a number for the triangle's second side: ");
-        //scanf("%f", &b);
-        //printf("The type of its figure is triangle and its area is %.2f", triangleArea(a, b));
+    if (num == 1) {
+        float a;
+        printf("Enter a number for the square's side: ");
+        scanf("%f", &a);
+        printf("The type of the figure is square and its area is %.2f", squareArea(a));
     }
 
-    //else if (num == 4) {
-        //float radius;
-        //printf("Enter a value for the radius: ");
-        //scanf("%f", &radius);
-        //printf("The type of the figure is circle and its area is %.2f", squareArea(radius));
-    //}
+    else if(num == 2) {
+        float a;
+        float b;
+        printf("Enter a number for the rectangle's first side: ");
+        scanf("%f", &a);
+        printf("Enter a number for the rectangle's second side: ");
+        scanf("%f", &b);
+        printf("The type of the figure is rectangle and its area is %.2f", rectangleArea(a, b));
+    }
 
-//}
+    else if (num == 3) {
+        float a;
+        float b;
+        printf("Enter a number for the triangle's first side: ");
+        scanf("%f", &a);
+        printf("Enter a number for the triangle's second side: ");
+        scanf("%f", &b);
+        printf("The type of its figure is triangle and its area is %.2f", triangleArea(a, b));
+    }
 
-//float squareArea(float a) {
-    //return a * a;
-//}
+    else if (num == 4) {
+        float radius;
+        printf("Enter a value for the radius: ");
+        scanf("%f", &radius);
+        printf("The type of the figure is circle and its area is %.2f", squareArea(radius));
+    }
 
-//float rectangleArea(float a, float b) {
-    //return a * b;
-//}
+}
 
-//float triangleArea(float a, float b) {
-    //return (a * b) / 2;
-//}
+float squareArea(float a) {
+    return a * a;
+}
 
-//float circleArea(float radius) {
-    //return 3.14 * radius * radius;
-//}
+float rectangleArea(float a, float b) {
+    return a * b;
+}
+
+float triangleArea(float a, float b) {
+    return (a * b) / 2;
+}
+
+float circleArea(float radius) {
+    return 3.14 * radius * radius;
+}*/
 
 /*ZADACHA 2:
 void swapFunc(int *x, int *y);
@@ -218,11 +215,43 @@ void findRoots(float a, float b, float c) {
     }
     else if (d == 0) {
         printf("There is one solution for the equation\n");
-        printf("%.2f", -b / 2 * a);
+        printf("x1: %.2f", -b / 2 * a);
     }
     else {
         printf("There are two solutions for the equation\n");
         printf("x1: %.2f\n", (-b - sqrt(d)) / (2 * a));
         printf("x2: %.2f\n", (-b + sqrt(d)) / (2 * a));
+
+
     }
 }*/
+/*float productNums(float a, float b);
+int main() {
+    float a;
+    float b;
+    printf("Enter number a: ");
+    scanf("%f", &a);
+    printf("Enter number b: ");
+    scanf("%f", &b);
+    printf("The result is: %.2f", productNums(a, b));
+
+}
+
+float productNums(float a, float b) {
+    return a * b;
+}*/
+void swapNums(int a, int b);
+int main () {
+    int a;
+    int b;
+    printf("Enter value for a: ");
+    scanf("%d", &a);
+    printf("Enter value for b: ");
+    scanf("%d", &b);
+    swapNums(a, b);
+
+}
+
+void swapNums(int a, int b) {
+    printf("The value for a is %d and the value for b is %d", b, a);
+}

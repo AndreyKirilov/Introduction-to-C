@@ -427,7 +427,7 @@ void checkWinner(int player, int computer) {
 //Withdraw money
 //Exit the banking app
 
-void checkBalance(float balance);
+/*void checkBalance(float balance);
 float depositMoney(float balance);
 float withdrawMoney(float balance);
 
@@ -491,4 +491,89 @@ float withdrawMoney(float balance) {
     else {
         return balance - sum;
     }
-}
+}*/
+
+/*int main() {
+    int i;
+    printf("Enter how many numbers you will type in the array: ");
+    scanf("%d", &i);
+    int nums[i];
+    for (int j = 0; j < i; j++) {
+        int k;
+        printf("Enter a number to add to the array: ");
+        scanf("%d", &k);
+        nums[j] = k;
+    }
+    int numsCount = sizeof(nums) / sizeof(nums[0]);
+    for (int i = 0; i < numsCount; i++) {
+        printf("%d\n", nums[i]);
+    }
+}*/
+
+/*int main() {
+    char names[3][20];
+    for (int i = 0; i < 3; i++) {
+        printf("Enter a name: ");
+        fgets(names[i], sizeof(names[i]), stdin);
+        names[i][strlen(names[i]) - 1] = '\0';
+    }
+    for (int j = 0; j < 3; j++) {
+        printf("%s\n", names[j]);
+    }
+}*/
+
+//Quiz game
+int main() {
+    char questions[5][100] = {
+        "What is the highest peak?", "What is the deepest point of Earth?", "What is the highest building?", "What is the biggest country",
+        "What is the biggest organ in the human body?"
+    };
+    int questionsCount = sizeof(questions) / sizeof(questions[0]);
+    char correctAnswers[5] = {'C', 'B', 'A', 'D', 'B'};
+    char options[][4][100] = {
+        {
+            "A. Mont Blanc",
+           "B. Musala",
+           "C. Everest",
+           "D. Kilimanjaro"
+        },
+        {"A. Dupnitsa",
+            "B. Mariana trench",
+            "C. Baikal",
+            "D. Samokov"
+        },
+        {"A. Burj Khalifa",
+            "B. Sky fort",
+            "C. Empire State Building",
+            "D. Petron towers"},
+
+        {"A. USA",
+            "B. Canada",
+            "C. Bulgaria",
+            "D. Russia"},
+
+        {"A. heart",
+            "B. skin",
+            "C. liver",
+            "D. brain"}
+    };
+    int points = 0;
+    for (int i = 0; i < questionsCount; i++) {
+        printf("%s\n", questions[i]);
+        for (int j = 0; j < 4; j++) {
+            printf("%s\n", options[i][j]);
+        }
+        char answer;
+        printf("Enter your answer (A, B, C or D): ");
+        scanf(" %c", &answer);
+        if (answer == correctAnswers[i]) {
+            printf("Congratulations! Your answer is correct!\n");
+            points += 1;
+        }
+        else {
+            printf("Sorry, Your answer is wrong!\n");
+        }
+        }
+    printf("Your total points are %d", points);
+    }
+
