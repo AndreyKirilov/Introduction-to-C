@@ -11,4 +11,6 @@ add_executable(AndreyCProject main.c
         University/laboratorni/uprazhnenie_2/count_one_to_ten.c
         University/laboratorni/uprazhnenie_3/zadachi.c
         University/seminarni/uprazhnenie_1/zadachi.c
-        University/seminarni/uprazhnenie_2/zadachi.c)
+        University/seminarni/uprazhnenie_2/zadachi.c
+        University/laboratorni/uprazhnenie_4/zadachi.c
+        University/laboratorni/uprazhnenie_5/zadachi.c)
