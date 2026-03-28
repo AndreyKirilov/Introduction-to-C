@@ -523,7 +523,7 @@ float withdrawMoney(float balance) {
 }*/
 
 //Quiz game
-int main() {
+/*int main() {
     char questions[5][100] = {
         "What is the highest peak?", "What is the deepest point of Earth?", "What is the highest building?", "What is the biggest country",
         "What is the biggest organ in the human body?"
@@ -576,4 +576,71 @@ int main() {
         }
     printf("Your total points are %d", points);
     }
+*/
 
+/*int main() {
+    int age = 18;
+    printf("%s", (age >= 18) ? "legal" : "minor");
+}*/
+
+/*int main() {
+    int hours = 13;
+    int minutes = 41;
+
+    printf("%d:%d, %s", hours, minutes, (hours > 12) ? "night" : "day");
+}*/
+
+/*struct Student {
+    char name[50];
+    int age;
+    char grade;
+};
+
+struct Rectangle {
+    float length;
+    float width;
+};
+float calculateArea(struct Rectangle r);
+
+int main() {
+    //struct Student studentOne = {"Andrey", 19, 'A'};
+    //printf("The name of the student is %s\n", studentOne.name);
+    //printf("%s is %d years old.\n", studentOne.name, studentOne.age);
+    //printf("%s has a grade of %c\n", studentOne.name, studentOne.grade);
+    struct Rectangle someRectangle = {5, 6};
+    printf("The rectangle's area is %.2f", calculateArea(someRectangle));
+}
+
+float calculateArea(struct Rectangle r) {
+    return r.length * r.width;
+}*/
+
+struct Student {
+    char name[50];
+    int age;
+    float grade;
+};
+
+int main() {
+    struct Student studentOne = {"Andrey", 20, 6.00};
+    struct Student studentTwo = {"John", 22, 4.00};
+    struct Student studentThree = {"Adam", 21, 5.00};
+    struct Student studentArray[3] = {studentOne, studentTwo, studentThree};
+    char bestStudent[50];
+    float bestGrade;
+    for (int i = 0; i < 3; i++) {
+        if (i == 0) {
+            strcpy(bestStudent, studentArray[0].name);
+            bestGrade = studentArray[0].grade;
+        }
+        else {
+            if (bestGrade < studentArray[i].grade) {
+                strcpy(bestStudent, studentArray[i].name);
+                bestGrade = studentArray[i].grade;
+            }
+        }
+    }
+    printf("The best student is %s with a grade %.2f",bestStudent, bestGrade);
+
+
+}
