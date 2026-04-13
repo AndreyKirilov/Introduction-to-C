@@ -4,6 +4,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 /*int main() {
     printf("My nephew's name is Ivan\n");
@@ -587,7 +588,7 @@ float withdrawMoney(float balance) {
     int hours = 13;
     int minutes = 41;
 
-    printf("%d:%d, %s", hours, minutes, (hours > 12) ? "night" : "day");
+    printf("%d:%d, %s", hours, minutes, (hours > 12) ? "PM" : "AM");
 }*/
 
 /*struct Student {
@@ -615,7 +616,7 @@ float calculateArea(struct Rectangle r) {
     return r.length * r.width;
 }*/
 
-struct Student {
+/*struct Student {
     char name[50];
     int age;
     float grade;
@@ -643,4 +644,263 @@ int main() {
     printf("The best student is %s with a grade %.2f",bestStudent, bestGrade);
 
 
+}*/
+
+/*
+struct Book {
+    char title[50];
+    char author[30];
+    float price;
+};
+
+void mostExpensiveBook(struct Book bookArray[3]);
+int main() {
+    struct Book bookOne = {"Lord of the rings", "Tolkien", 20.0};
+    struct Book bookTwo = {"Harry Potter", "J.K. Rowling", 25.0};
+    struct Book bookThree = {"48 laws of power", "Robert Greene", 50.0};
+    struct Book bookArray[3] = {bookOne, bookTwo, bookThree};
+    mostExpensiveBook(bookArray);
+}
+
+void mostExpensiveBook(struct Book bookArray[3]) {
+    char mostExpensiveTitle[50];
+    float mostExpensivePrice;
+    for (int i = 0; i < 3; i++) {
+        if (i == 0) {
+            strcpy(mostExpensiveTitle, bookArray[i].title);
+            mostExpensivePrice = bookArray[i].price;
+        }
+        else {
+            if (mostExpensivePrice < bookArray[i].price) {
+                mostExpensivePrice = bookArray[i].price;
+                strcpy(mostExpensiveTitle, bookArray[i].title);
+            }
+        }
+    }
+    printf("The most expensive book is %s with a price of %.2f", mostExpensiveTitle, mostExpensivePrice);
+}*/
+
+/*int main() {
+    int n;
+    printf("Enter how many numbers you want to put in the array: ");
+    scanf("%d", &n);
+    int *someArray = calloc(n, sizeof(int));
+
+    for (int i = 0; i < n; i++) {
+        printf(" %d ", someArray[i]);
+    }
+    printf("\n");
+
+    for (int i = 0; i < n; i++) {
+        int someNum;
+        printf("Enter a random number to put in the array: ");
+        scanf("%d", &someNum);
+        someArray[i] = someNum;
+    }
+    if (someArray == NULL) {
+        printf("The array is empty!");
+    }
+    else {
+        for (int i = 0; i < n; i++) {
+            printf(" %d ", someArray[i]);
+        }
+    }
+    free(someArray);
+}*/
+
+/*int main() {
+    int *someArray = malloc(2 * sizeof(int));
+    int arrayElements;
+    int iterations = 0;
+
+   do {
+       int someNum;
+       printf("Enter a number to add to the array: ");
+       scanf("%d", &someNum);
+       if (someNum == -1) {
+           break;
+       }
+       else {
+           someArray[iterations] = someNum;
+           arrayElements += 1;
+           iterations += 1;
+           if (arrayElements >= sizeof(someArray) / sizeof(someArray[0])) {
+               int *pArray = realloc(someArray, (1 + sizeof(someArray) / sizeof(someArray[0])) * sizeof(int));
+           }
+       }
+   } while (1);
+
+    for (int i = 0; i < arrayElements; i++) {
+        printf(" %d ", (someArray[i]));
+    }
+    free(someArray);
+}*/
+
+/*int main() {
+    int capacity = 2;
+    int countElements = 0;
+    int *someArray = malloc(capacity * sizeof(int));
+
+    while (1) {
+        int someNum;
+        printf("Enter a number to add to the array: ");
+        scanf("%d", &someNum);
+
+        if (someNum == -1) {
+            printf("Invalid number was entered!\n");
+            break;
+        }
+
+        if (countElements >= capacity) {
+            capacity *= 2;
+            int *temporaryArray = realloc(someArray, capacity * sizeof(int));
+            if (temporaryArray == NULL) {
+                printf("Not enough space to save memory for this array!");
+                free(someArray);
+                return 1;
+            }
+            someArray = temporaryArray;
+        }
+        someArray[countElements] = someNum;
+        countElements += 1;
+    }
+    int *finalArray = realloc(someArray, countElements * sizeof(int));
+    if (finalArray == NULL) {
+        printf("Not enough space!");
+        free(someArray);
+        return 1;
+    }
+    someArray = finalArray;
+    for (int i = 0; i < countElements; i++) {
+        printf(" %d ", someArray[i]);
+    }
+    free(someArray);
+    return 0;
+}*/
+
+/*int main() {
+    int capacity = 1;
+    int charCount = 0;
+    char *someArray = malloc((capacity + 1) * sizeof(char));
+
+    if (someArray == NULL) {
+        printf("Not enough memory!");
+        return 1;
+    }
+
+    while (1) {
+        char someChar;
+        printf("Enter a char to add to the string: ");
+        someChar = getchar();
+
+        if (someChar == '\n') {
+            break;
+        }
+
+        if (charCount == capacity) {
+            capacity += 1;
+            char *temporaryArray = realloc(someArray, (capacity + 1) * sizeof(char));
+            if (temporaryArray == NULL) {
+                printf("Not enough memory!");
+                free(someArray);
+                return 1;
+            }
+            someArray = temporaryArray;
+        }
+
+        someArray[charCount] = someChar;
+        charCount += 1;
+    }
+
+    someArray[charCount] = '\0';
+
+    printf("%s\n", someArray);
+
+    free(someArray);
+    return 0;
+}*/
+
+/*int main() {
+    FILE *someFile;
+    someFile = fopen("notes.txt", "w");
+    if (someFile == NULL) {
+        printf("Error");
+        return 1;
+    }
+    fprintf(someFile, "Hello World!\n");
+    fputs("I am Andrey", someFile);
+    fclose(someFile);
+
+    FILE *someFile2;
+    char someText[100];
+    someFile2 = fopen("notes.txt", "r");
+    while (fgets(someText, sizeof(someText), someFile2)) {
+        printf("%s", someText);
+    }
+    fclose(someFile2);
+
+    printf("\n");
+    FILE *someFile3;
+    someFile3 = fopen("notes.txt", "r");
+    int charCounter = 0;
+    while (1) {
+        char someText = fgetc(someFile3);
+        if (someText == EOF) {
+            break;
+        }
+        charCounter += 1;
+    }
+    printf("The number of characters in the file is: %d\n", charCounter);
+    fclose(someFile3);
+
+    FILE *someFile4;
+    someFile4 = fopen("notes.txt", "r");
+    int rowCounter = 1;
+    while (1) {
+        char someChar = fgetc(someFile4);
+        if (someChar == EOF) {
+            break;
+        }
+
+        else if (someChar == '\n') {
+            rowCounter += 1;
+        }
+    }
+    printf("The number of rows in the file is: %d\n", rowCounter);
+    fclose(someFile4);
+
+    FILE *someFile5;
+    someFile5 = fopen("notes.txt", "r");
+    int wordCounter = 0;
+    int inWord = 0;
+    while (1) {
+        char someChar = fgetc(someFile5);
+        if (someChar == EOF) {
+            break;
+        }
+        if (someChar != '\n' && someChar != '\t' && someChar != ' ') {
+            if (inWord == 0) {
+                wordCounter += 1;
+                inWord = 1;
+            }
+        }
+        else if (someChar == ' ' || someChar == '\t' || someChar == '\n') {
+            inWord = 0;
+        }
+    }
+    fclose(someFile5);
+    printf("The number of words in the file is: %d", wordCounter);
+    }*/
+
+int main() {
+    time_t rawtime;
+    struct tm *timeInfo;
+
+    while (1) {
+        time(&rawtime);
+        timeInfo = localtime(&rawtime);
+        printf("\rThe time is: %02d:%02d:%02d", timeInfo->tm_hour, timeInfo->tm_min, timeInfo->tm_sec);
+        fflush(stdout);
+        sleep(1);
+    }
 }
