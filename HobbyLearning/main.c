@@ -892,7 +892,7 @@ void mostExpensiveBook(struct Book bookArray[3]) {
     printf("The number of words in the file is: %d", wordCounter);
     }*/
 
-int main() {
+/*int main() {
     time_t rawtime;
     struct tm *timeInfo;
 
@@ -903,4 +903,100 @@ int main() {
         fflush(stdout);
         sleep(1);
     }
+}*/
+
+/*int main() {
+    FILE *f = fopen("notes.txt", "r");
+
+    if (f == NULL) {
+        printf("Cannot open file!");
+        return 1;
+    }
+
+    int inWord = 0;
+    int wordCounter = 0;
+    while (1) {
+        char someChar = fgetc(f);
+        if (someChar == EOF) {
+            break;
+        }
+        if (someChar != '\n' && someChar != '\t' && someChar != ' ') {
+            if (inWord == 0) {
+                inWord = 1;
+                wordCounter += 1;
+            }
+
+        }
+        else {
+            inWord = 0;
+        }
+    }
+    printf("The number of words in the file are: %d", wordCounter);
+}*/
+
+
+/*typedef struct Student {
+    char name[50];
+    int age;
+    float grade;
+} student;
+
+void changeAge(student *someStudent, int age);
+
+int main() {
+    int n;
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+    getchar();
+
+    student *studentArray = malloc(n * sizeof(student));
+
+    if (studentArray == NULL) {
+        printf("Not enough memory");
+        free(studentArray);
+    }
+
+    for (int i = 0; i < n; i++) {
+        student someStudent;
+        printf("Enter student's name: ");
+        fgets(someStudent.name, sizeof(someStudent.name), stdin);
+        someStudent.name[strlen(someStudent.name) - 1] = '\0';
+        strcpy(studentArray[i].name, someStudent.name);
+        printf("Enter student's age: ");
+        scanf("%d", &someStudent.age);
+        studentArray[i].age = someStudent.age;
+        printf("Enter student's grade: ");
+        scanf("%f", &someStudent.grade);
+        studentArray[i].grade = someStudent.grade;
+        getchar();
+    }
+
+    char searchedName[50];
+    printf("Enter the searhced student's name: ");
+    fgets(searchedName, sizeof(searchedName), stdin);
+    searchedName[strlen(searchedName) - 1] = '\0';
+
+    for (int i = 0; i < n; i++) {
+        if (strcmp(searchedName, studentArray[i].name) == 0) {
+            printf("This is %s, he is %d years old and has a grade of %.2f.", searchedName, studentArray[i].age, studentArray[i].grade);
+            return 0;
+        }
+    }
+    printf("A student with this name was not found.");
+    return 0;
+
+
 }
+//Function for changing a struct object's field
+int main() {
+    student studentOne = {"Andrey", 19, 6.00};
+    int age;
+    printf("Enter the new age: ");
+    scanf("%d", &age);
+    changeAge(&studentOne, age);
+    printf("This is %s and he is %d years old now", studentOne.name, studentOne.age);
+}
+
+void changeAge(student *someStudent, int age) {
+    someStudent->age = age;
+}*/
