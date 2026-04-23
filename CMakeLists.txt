@@ -19,4 +19,6 @@ add_executable(AndreyCProject main.c
         University/laboratorni/uprazhnenie_7/zadachi.c
         University/seminarni/uprazhnenie_4/zadachi.c
         University/laboratorni/uprazhnenie_8/zadachi.c
+        University/seminarni/uprazhnenie_5/zadachi.c
+        University/laboratorni/uprazhnenie_9/zadachi.c
 )
